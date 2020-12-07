@@ -29,12 +29,22 @@ async def craft(ctx):
 
 
 @client.command()
-async def coinflip(ctx):
-    num = random.random()
-    if num < 0.5:
-        await ctx.send('Heads')
-    else:
-        await ctx.send('Tails')
+tailsNum=0
+headsNum=0
+async def coinflip(ctx, coinTimes=1):
+    outcome=radom.randint(1,2)
+    if coinTimes!=1:
+        for i in range(min(max(times,1), 500)):
+            if outcome=1:
+                headsNum+=1
+            else:
+                tailsNum+=1
+     else:
+        if outcome=1:
+            await ctx.send('You flipped Heads!')
+        else:
+            await ctx.send('You flipped Tails!')
+   await ctx.send("You flipped Heads "+str(headsNum)+" times and Tials "+str(tailsNum)+" times!")
 
 
 @client.command()
